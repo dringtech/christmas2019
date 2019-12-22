@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
+import * as container from '../components/container';
+import { bg, makeBackground } from '../components/background';
+
 import { skaterIcon, gilesHead, beaHead, marthaHead, rebeccaHead } from './preload'
-import { bg, makeBackground } from '../elements/background'
 import { createSkater } from '../elements/skater'
 import { setupSound } from '../elements/tune/sound'
 import { createButton } from '../elements/button'
@@ -15,12 +17,16 @@ export function setup () {
   // setupSound()
   // soundButton = createButton()
 
-  createCanvas(windowWidth, windowHeight)
+  const { containerHeight, containerWidth } = container.getSize();
+
+  const canvas = createCanvas(containerWidth, containerHeight);
   // skaters.bea = createSkater({ image: skaterIcon, face: beaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
   // skaters.martha = createSkater({ image: skaterIcon, face: marthaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
   // skaters.rebecca = createSkater({ image: skaterIcon, face: rebeccaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
   // skaters.giles = createSkater({ image: skaterIcon, face: gilesHead, x: -50, y: windowHeight / 2, faceScale: 4 })
   // createSnowstorm()
+
+  canvas.parent(container.id);
 
   makeBackground()
   presents.push(new Present(200, height - 150))

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { skaters, presents } from './setup'
-import { bg } from '../elements/background'
+import { bg } from '../components/background'
 import tree from '../elements/tree'
 import * as windowView from '../elements/window'
 

@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
-import { bg, makeBackground } from '../elements/background'
-import { createSnowstorm } from '../elements/snowstorm'
+import * as container from '../components/container';
+import { bg, makeBackground } from '../components/background'
 
 export function windowResized () {
-  resizeCanvas(windowWidth, windowHeight)
+  const { containerWidth, containerHeight } = container.getSize();
+  resizeCanvas(containerWidth, containerHeight);
+
   if (bg !== undefined) bg.remove()
-  // createSnowstorm()
   makeBackground()
 }
