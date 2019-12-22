@@ -2,7 +2,7 @@
 import { skaters, presents } from './setup'
 import { bg } from '../components/background'
 import { tree } from '../components/tree'
-import * as windowView from '../elements/window'
+import * as windowView from '../components/window'
 
 export function draw () {
   // Object.keys(skaters)
@@ -15,7 +15,7 @@ export function draw () {
   // snowstorm.forEach(_ => _.draw())
 
   image(bg, 0, 0)
-  windowView.draw(width/2 + 100, height - 280)
+  windowView.draw(width/2, 50)
   image(tree, 50, 50)
 
   for (const p of presents) {

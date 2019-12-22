@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
-import * as container from '../components/container';
 import { bg, makeBackground } from '../components/background';
+import * as container from '../components/container';
 import { makeTree } from '../components/tree';
+import * as theWindow from '../components/window'
 
 import { skaterIcon, gilesHead, beaHead, marthaHead, rebeccaHead } from './preload'
 import { createSkater } from '../elements/skater'
 import { setupSound } from '../elements/tune/sound'
 import { createButton } from '../elements/button'
-import * as elWindow from '../elements/window'
 import { Present } from '../elements/present'
 
 export const skaters = {}
@@ -36,9 +36,6 @@ export function setup () {
   presents.push(new Present(width / 2 - 200, height - 120))
   presents.push(new Present(600, height - 150))
   presents.push(new Present(800, height - 150))
-  const viewFromWindow = elWindow.setup(400, 250)
+  theWindow.setup(250, 200)
   image(bg, 0, 0)
-  return {
-    viewFromWindow,
-  }
 }

@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 class Snowflake {
-  constructor () {
-    this.x = random(windowWidth)
-    this.y = random(windowHeight)
+  constructor (w = width, h = height) {
+    this.x = random(w)
+    this.y = random(h)
+    this.maxY = h;
     this.speed = random(1, 4) / 2
     this.noiseSeed = random(10000)
     this.offsetRadius = 100
@@ -33,7 +34,7 @@ class Snowflake {
 
   animate () {
     this.y += this.speed
-    if (this.y > height + 10) this.y = -10
+    if (this.y > this.maxY + 10) this.y = -10
     this.noiseSeed += this.turbulence
   }
 
@@ -51,6 +52,6 @@ class Snowflake {
   }
 }
 
-export function createSnowflake () {
-  return new Snowflake()
+export function createSnowflake (w = width, h = height) {
+  return new Snowflake(w, h)
 }

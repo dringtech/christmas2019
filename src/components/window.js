@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { snowstorm, createSnowstorm } from './snowstorm'
+import { createSnowstorm } from './snowstorm'
 
 function mountains (canvas, mountainTop, mountainHeight) {
   var bumpiness = 0.005
@@ -16,11 +16,14 @@ function colourRange (point) {
 
 let scene
 let paintedWindow
+let snowstorm;
 
-export function setup (width, height) {
-  scene = createGraphics(width, height)
+export function setup (w, h) {
+  scene = createGraphics(w, h);
   const skyColor = color('#adeeff')
-  createSnowstorm(100)
+  const density = 4000;
+  const numFlakes = round(scene.width*scene.height/density);
+  snowstorm = createSnowstorm(numFlakes, scene.width, scene.height+20);
   scene.background(skyColor)
   scene.noStroke()
   scene.colorMode(HSB)
@@ -34,14 +37,17 @@ export function setup (width, height) {
 
 export function draw (x, y) {
   paintedWindow.image(scene, 0, 0)
-  snowstorm.forEach(flake => flake.animate())
-  snowstorm.forEach(flake => flake.draw(paintedWindow))
+  snowstorm.forEach(flake => {
+    flake.animate();
+    flake.draw(paintedWindow);
+  })
   paintedWindow.strokeWeight(10)
   paintedWindow.stroke('black')
-  paintedWindow.noFill()
-  paintedWindow.rect(0, 0, paintedWindow.width, paintedWindow.height)
+  paintedWindow.noFill();
+  paintedWindow.rect(5, 5, paintedWindow.width-10, paintedWindow.height-10);
+  paintedWindow.line(0, paintedWindow.height/2, paintedWindow.width, paintedWindow.height/2);
+  paintedWindow.line(paintedWindow.width/2, 0, paintedWindow.width/2, paintedWindow.height);
   push()
-  translate(-paintedWindow.width / 2, -paintedWindow.height)
   image(paintedWindow, x, y)
   pop()
 }
