@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import * as container from '../components/container';
 import { bg, makeBackground } from '../components/background';
+import { makeTree } from '../components/tree';
 
 import { skaterIcon, gilesHead, beaHead, marthaHead, rebeccaHead } from './preload'
 import { createSkater } from '../elements/skater'
@@ -29,6 +30,8 @@ export function setup () {
   canvas.parent(container.id);
 
   makeBackground()
+  makeTree();
+
   presents.push(new Present(200, height - 150))
   presents.push(new Present(width / 2 - 200, height - 120))
   presents.push(new Present(600, height - 150))

@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const wallColour = '#431175';
+import { wallColour } from './colours';
 const floorColour = '#51361b';
 
 export let bg

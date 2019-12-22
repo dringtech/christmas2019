@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { skaters, presents } from './setup'
 import { bg } from '../components/background'
-import tree from '../elements/tree'
+import { tree } from '../components/tree'
 import * as windowView from '../elements/window'
 
 export function draw () {
@@ -16,7 +16,8 @@ export function draw () {
 
   image(bg, 0, 0)
   windowView.draw(width/2 + 100, height - 280)
-  tree(width/2 - 200, height - 150)
+  image(tree, 50, 50)
+
   for (const p of presents) {
     p.draw()
   }
