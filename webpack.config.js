@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['docs']),
     new HtmlWebpackPlugin({
-      title: 'Merry Dringlemas 2018!',
+      title: 'Dring Dong Merrily On High 2019!',
       template: 'src/index.html',
     }),
     new MiniCssExtractPlugin(),
