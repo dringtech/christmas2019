@@ -74,7 +74,7 @@ export class Present {
   prime() {
     this.primed = true;
     const present = this;
-    const timeout = getPoissonRandom(5)*1000;
+    const timeout = getPoissonRandom(50)*100;
     this.timer = setTimeout(() => present.explode(), timeout);
   }
 

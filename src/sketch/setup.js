@@ -17,11 +17,6 @@ export function setup () {
   const { containerHeight, containerWidth } = container.getSize();
 
   const canvas = createCanvas(containerWidth, containerHeight);
-  // skaters.bea = createSkater({ image: skaterIcon, face: beaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
-  // skaters.martha = createSkater({ image: skaterIcon, face: marthaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
-  // skaters.rebecca = createSkater({ image: skaterIcon, face: rebeccaHead, x: -50, y: windowHeight / 2, faceScale: 4 })
-  // skaters.giles = createSkater({ image: skaterIcon, face: gilesHead, x: -50, y: windowHeight / 2, faceScale: 4 })
-  // createSnowstorm()
 
   canvas.parent(container.id);
 
