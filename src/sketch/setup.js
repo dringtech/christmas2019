@@ -11,8 +11,8 @@ import { createButton } from '../elements/button'
 export let soundButton
 
 export function setup () {
-  // setupSound()
-  // soundButton = createButton()
+  setupSound()
+  soundButton = createButton()
 
   const { containerHeight, containerWidth } = container.getSize();
 
