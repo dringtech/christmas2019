@@ -24,7 +24,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cp src/CNAME docs",
     "start": "webpack-dev-server --open",
     "poststart": "npm run build"
   }
