@@ -8,7 +8,7 @@ class Snowflake {
     this.noiseSeed = random(10000)
     this.offsetRadius = 100
     this.turbulence = 0.01
-    const flake = createGraphics(20, 20)
+    const flake = createGraphics(30, 30)
     const drawFlake = () => {
       flake.push()
       flake.strokeWeight(2)
@@ -20,11 +20,12 @@ class Snowflake {
       }
       flake.pop()
     }
-    flake.translate(10, 10)
+    flake.translate(15, 15)
     flake.push()
     flake.stroke('blue')
+    flake.strokeWeight(4);
     drawFlake()
-    flake.filter(BLUR, 3)
+    // flake.filter(BLUR, 1)
     flake.pop()
     flake.stroke('white')
     drawFlake()
