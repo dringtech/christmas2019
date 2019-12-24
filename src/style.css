@@ -37,6 +37,8 @@ body > h1 {
   width: 100%;
   text-align: center;
   color: #ed225d;
+  font-size: 3em;
+  font-weight: normal;
 }
 
 #sketch {
